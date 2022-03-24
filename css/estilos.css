@@ -18,6 +18,7 @@ html, body{
     margin-bottom: 2rem;
 }
 
+
 /* ------ Fieldsets ------*/
 
 .formulario fieldset{
@@ -67,7 +68,7 @@ html, body{
 .entrada select{
     /*como no hay otro elemento, los input con valores de type que no sean radio,
     los textarea y los select toman el resto del espacio disponible*/
-    flex: 1;
+    flex-grow: 1;
     border: 1px solid #e1e1e1;
     padding: 0.5rem;
 }
@@ -85,16 +86,41 @@ html, body{
     border-radius: 1rem;
 }
 
+.entrada input[type="date"]{
+    max-width: 25%;
+}
+
 .entrada select{
     max-width: 10rem;
 }
 
+input:disabled{
+    background-color: #d2d2d2;
+}
 
+input:checked + label{
+    color:red;
+}
+
+input[type="radio"]:checked {
+    height: 30px;
+    width: 30px;
+    margin-top: -0.5rem;
+    box-shadow: 0 0 0 3px orange;
+}
+
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 5px orange;
+}
+
+input:focus{
+    background-color:bisque;
+}
 
 /* ------ Botones ------*/
 .botones{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .botones button, .botones input{
@@ -111,6 +137,9 @@ html, body{
     color: #000;
 }
 
+.botones:focus{
+    box-shadow: 0 0 0 3px red;
+}
 
 
 
